@@ -8,15 +8,22 @@
 
 #import "AppDelegate.h"
 
+#import "ProductProvider.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+@synthesize productProvider = _productProvider;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    _productProvider = [[ProductProvider alloc] initWithManagedObjectContext:self.managedObjectContext];
+    
     return YES;
 }
 
@@ -36,6 +43,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self.productProvider load];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
