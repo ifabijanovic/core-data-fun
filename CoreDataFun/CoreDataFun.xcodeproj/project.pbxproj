@@ -11,7 +11,6 @@
 		81EC3F171B6A9B4D0076EE5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F161B6A9B4D0076EE5F /* main.m */; };
 		81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */; };
 		81EC3F1D1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F1B1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld */; };
-		81EC3F201B6A9B4D0076EE5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F1F1B6A9B4D0076EE5F /* ViewController.m */; };
 		81EC3F231B6A9B4D0076EE5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F211B6A9B4D0076EE5F /* Main.storyboard */; };
 		81EC3F251B6A9B4D0076EE5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F241B6A9B4D0076EE5F /* Images.xcassets */; };
 		81EC3F281B6A9B4D0076EE5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */; };
@@ -19,6 +18,9 @@
 		81EC3F541B6AA3170076EE5F /* ProductProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F531B6AA3170076EE5F /* ProductProvider.m */; };
 		81EC3F561B6AA5430076EE5F /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F551B6AA5430076EE5F /* config.plist */; };
 		81EC3F601B6AB2530076EE5F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F5F1B6AB2530076EE5F /* Product.m */; };
+		81EC3F651B6AB5F30076EE5F /* ProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F641B6AB5F30076EE5F /* ProductTableViewController.m */; };
+		81EC3F6A1B6AB7340076EE5F /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F681B6AB7340076EE5F /* ProductTableViewCell.m */; };
+		81EC3F6B1B6AB7340076EE5F /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F691B6AB7340076EE5F /* ProductTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +31,6 @@
 		81EC3F181B6A9B4D0076EE5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		81EC3F1C1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFun.xcdatamodel; sourceTree = "<group>"; };
-		81EC3F1E1B6A9B4D0076EE5F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		81EC3F1F1B6A9B4D0076EE5F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		81EC3F221B6A9B4D0076EE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81EC3F241B6A9B4D0076EE5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81EC3F271B6A9B4D0076EE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -41,6 +41,11 @@
 		81EC3F551B6AA5430076EE5F /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		81EC3F5E1B6AB2530076EE5F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = Data/Model/Product.h; sourceTree = "<group>"; };
 		81EC3F5F1B6AB2530076EE5F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = Data/Model/Product.m; sourceTree = "<group>"; };
+		81EC3F631B6AB5F30076EE5F /* ProductTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewController.h; path = UI/Controller/ProductTableViewController.h; sourceTree = "<group>"; };
+		81EC3F641B6AB5F30076EE5F /* ProductTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewController.m; path = UI/Controller/ProductTableViewController.m; sourceTree = "<group>"; };
+		81EC3F671B6AB7340076EE5F /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewCell.h; path = UI/View/ProductTableViewCell.h; sourceTree = "<group>"; };
+		81EC3F681B6AB7340076EE5F /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewCell.m; path = UI/View/ProductTableViewCell.m; sourceTree = "<group>"; };
+		81EC3F691B6AB7340076EE5F /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductTableViewCell.xib; path = UI/View/ProductTableViewCell.xib; sourceTree = "<group>"; };
 		AEF61AD564393647A77AF15A /* Pods-CoreDataFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataFun/Pods-CoreDataFun.debug.xcconfig"; sourceTree = "<group>"; };
 		C46D98505C121E803EF5683E /* libPods-CoreDataFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,11 +92,10 @@
 		81EC3F131B6A9B4D0076EE5F /* CoreDataFun */ = {
 			isa = PBXGroup;
 			children = (
+				81EC3F611B6AB5D60076EE5F /* UI */,
 				81EC3F3D1B6A9C190076EE5F /* Data */,
 				81EC3F181B6A9B4D0076EE5F /* AppDelegate.h */,
 				81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */,
-				81EC3F1E1B6A9B4D0076EE5F /* ViewController.h */,
-				81EC3F1F1B6A9B4D0076EE5F /* ViewController.m */,
 				81EC3F211B6A9B4D0076EE5F /* Main.storyboard */,
 				81EC3F241B6A9B4D0076EE5F /* Images.xcassets */,
 				81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */,
@@ -138,6 +142,34 @@
 				81EC3F531B6AA3170076EE5F /* ProductProvider.m */,
 			);
 			name = Provider;
+			sourceTree = "<group>";
+		};
+		81EC3F611B6AB5D60076EE5F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				81EC3F661B6AB6F40076EE5F /* View */,
+				81EC3F621B6AB5DB0076EE5F /* Controller */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		81EC3F621B6AB5DB0076EE5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81EC3F631B6AB5F30076EE5F /* ProductTableViewController.h */,
+				81EC3F641B6AB5F30076EE5F /* ProductTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		81EC3F661B6AB6F40076EE5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81EC3F671B6AB7340076EE5F /* ProductTableViewCell.h */,
+				81EC3F681B6AB7340076EE5F /* ProductTableViewCell.m */,
+				81EC3F691B6AB7340076EE5F /* ProductTableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		9FEB17E8108AEC43D92D5E04 /* Frameworks */ = {
@@ -209,6 +241,7 @@
 			files = (
 				81EC3F561B6AA5430076EE5F /* config.plist in Resources */,
 				81EC3F231B6A9B4D0076EE5F /* Main.storyboard in Resources */,
+				81EC3F6B1B6AB7340076EE5F /* ProductTableViewCell.xib in Resources */,
 				81EC3F281B6A9B4D0076EE5F /* LaunchScreen.xib in Resources */,
 				81EC3F251B6A9B4D0076EE5F /* Images.xcassets in Resources */,
 			);
@@ -256,9 +289,10 @@
 			files = (
 				81EC3F601B6AB2530076EE5F /* Product.m in Sources */,
 				81EC3F1D1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld in Sources */,
+				81EC3F651B6AB5F30076EE5F /* ProductTableViewController.m in Sources */,
 				81EC3F4A1B6A9DAF0076EE5F /* Cart.m in Sources */,
 				81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */,
-				81EC3F201B6A9B4D0076EE5F /* ViewController.m in Sources */,
+				81EC3F6A1B6AB7340076EE5F /* ProductTableViewCell.m in Sources */,
 				81EC3F541B6AA3170076EE5F /* ProductProvider.m in Sources */,
 				81EC3F171B6A9B4D0076EE5F /* main.m in Sources */,
 			);

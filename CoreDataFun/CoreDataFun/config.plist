@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>Product Source URL</key>
-	<string>insert url here</string>
+	<string>http://test-bbwebshop.elasticbeanstalk.com/webshop/product</string>
 </dict>
 </plist>

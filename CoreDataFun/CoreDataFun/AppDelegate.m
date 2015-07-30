@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ProductProvider.h"
+#import "ProductTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,10 @@
     // Override point for customization after application launch.
     
     _productProvider = [[ProductProvider alloc] initWithManagedObjectContext:self.managedObjectContext];
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    ProductTableViewController *productController = (ProductTableViewController *)[navigationController topViewController];
+    productController.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }
@@ -112,7 +117,7 @@
     if (!coordinator) {
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
 }

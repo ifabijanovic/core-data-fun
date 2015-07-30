@@ -15,7 +15,7 @@
 
 @interface ProductProvider()
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, assign) BOOL hasChanges;
 
 @end
