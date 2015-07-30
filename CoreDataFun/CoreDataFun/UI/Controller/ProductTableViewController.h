@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ProductProvider.h"
 #import "CartProvider.h"
 
 @interface ProductTableViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
+@property (nonatomic, retain) ProductProvider *productProvider;
 @property (nonatomic, retain) CartProvider *cartProvider;
 
 @end

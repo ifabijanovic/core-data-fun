@@ -17,7 +17,6 @@
 @interface ProductProvider()
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, assign) BOOL hasChanges;
 
 @end
 
@@ -28,7 +27,6 @@
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     if (self = [super init]) {
         self.managedObjectContext = managedObjectContext;
-        self.hasChanges = NO;
     }
     return self;
 }
@@ -46,59 +44,83 @@
         task = UIBackgroundTaskInvalid;
     }];
     
-    // Perform loading in the background
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *configPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
-        NSDictionary *config = [NSDictionary dictionaryWithContentsOfFile:configPath];
-        if (config) {
-            NSString *url = [config objectForKey:URL_KEY];
+    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
+    NSDictionary *config = [NSDictionary dictionaryWithContentsOfFile:configPath];
+    if (config) {
+        NSString *url = [config objectForKey:URL_KEY];
+        
+        [[AFHTTPRequestOperationManager manager] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *data = responseObject;
+            NSArray *content = [data objectForKey:@"content"];
             
-            [[AFHTTPRequestOperationManager manager] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSDictionary *data = responseObject;
-                NSArray *content = [data objectForKey:@"content"];
+            NSManagedObjectContext *privateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            [privateContext setParentContext:self.managedObjectContext];
+            
+            [privateContext performBlock:^{
                 if (content) {
                     for (NSDictionary *item in content) {
                         if (shouldStop) return;
-                        [self insertOrUpdateItem:item];
+                        [self insertOrUpdateItem:item inContext:privateContext];
                     }
                 }
                 
-                if (self.hasChanges) {
-                    [self.managedObjectContext save:nil];
-                    self.hasChanges = NO;
+                if (privateContext.hasChanges) {
+                    [privateContext save:nil];
                     [self notifyHasChanges];
                 }
-            } failure:nil];
-        }
-    });
+            }];
+        } failure:nil];
+    }
+}
+
+- (void)getProductsWithCompletionHandler:(void (^)(NSArray *))handler {
+    __weak ProductProvider *weakSelf = self;
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastModified" ascending:NO];
+    [request setSortDescriptors:@[sortDescriptor]];
+    
+    NSAsynchronousFetchRequest *asynchronousFetchRequest = [[NSAsynchronousFetchRequest alloc] initWithFetchRequest:request completionBlock:^(NSAsynchronousFetchResult *result) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSArray *data = result.finalResult ? result.finalResult : [NSArray array];
+            handler(data);
+        });
+    }];
+    
+    [self.managedObjectContext performBlock:^{
+        [weakSelf.managedObjectContext executeRequest:asynchronousFetchRequest error:nil];
+    }];
 }
 
 #pragma mark - Private methods
 
-- (void)insertOrUpdateItem:(NSDictionary *)item {
+- (void)insertOrUpdateItem:(NSDictionary *)item inContext:(NSManagedObjectContext *)context {
     NSString *productId = [item objectForKey:@"id"];
-    Product *product = [self getProductWithId:productId];
+    Product *product = [self getProductWithId:productId inContext:context];
     if (product) {
         [self updateProduct:product withData:item];
     } else {
-        product = [self createProductWithData:item];
+        product = [self createProductWithData:item inContext:context];
     }
 }
 
-- (Product *)getProductWithId:(NSString *)productId {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+- (Product *)getProductWithId:(NSString *)productId inContext:(NSManagedObjectContext *)context {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"productId == %@", productId];
     [request setPredicate:predicate];
     
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    NSArray *result = [context executeFetchRequest:request error:nil];
     return [result firstObject];
 }
 
-- (Product *)createProductWithData:(NSDictionary *)data {
-    Product *product = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+- (Product *)createProductWithData:(NSDictionary *)data inContext:(NSManagedObjectContext *)context {
+    Product *product = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_NAME inManagedObjectContext:context];
     
     product.productId = [data objectForKey:@"id"];
     [self fillProduct:product withData:data];
@@ -106,7 +128,7 @@
     return product;
 }
 
-- (void)updateProduct:(Product *)product withData:(NSDictionary *)data {
+- (void)updateProduct:(Product *)product withData:(NSDictionary *)data  {
     NSNumber *lastModified = [data objectForKey:@"modifiedTmstp"];
     
     // Check if product was modified since last time
@@ -127,8 +149,6 @@
     product.unitWeight = [NSDecimalNumber decimalNumberWithDecimal:[unitWeight decimalValue]];
     
     product.lastModified = [data objectForKey:@"modifiedTmstp"];
-    
-    self.hasChanges = YES;
 }
 
 - (void)notifyHasChanges {

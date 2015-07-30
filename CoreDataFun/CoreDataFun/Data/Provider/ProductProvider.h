@@ -14,5 +14,6 @@
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 - (void)load;
+- (void)getProductsWithCompletionHandler:(void (^)(NSArray *))handler;
 
 @end

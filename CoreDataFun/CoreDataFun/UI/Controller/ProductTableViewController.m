@@ -83,35 +83,14 @@
 - (void)performFetch {
     [self.activityIndicatorView startAnimating];
     
-    __weak ProductTableViewController *weakSelf = self;
-    
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Product" inManagedObjectContext:self.managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastModified" ascending:NO];
-    [request setSortDescriptors:@[sortDescriptor]];
-    
-    NSAsynchronousFetchRequest *asynchronousFetchRequest = [[NSAsynchronousFetchRequest alloc] initWithFetchRequest:request completionBlock:^(NSAsynchronousFetchResult *result) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf processFetch:result];
-        });
-    }];
-    
-    [self.managedObjectContext performBlock:^{
-        [weakSelf.managedObjectContext executeRequest:asynchronousFetchRequest error:nil];
-    }];
-}
-
-- (void)processFetch:(NSAsynchronousFetchResult *)result {
-    if (result.finalResult) {
-        self.products = result.finalResult;
+    [self.productProvider getProductsWithCompletionHandler:^(NSArray *data) {
+        self.products = data;
         [self.tableView reloadData];
         
-        if (result.finalResult.count > 0) {
+        if (self.products.count > 0) {
             [self.activityIndicatorView stopAnimating];
         }
-    }
+    }];
 }
 
 - (void)productsChanged:(NSNotification *)notification {

@@ -28,7 +28,8 @@
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ProductTableViewController *productController = (ProductTableViewController *)[navigationController topViewController];
-    productController.managedObjectContext = self.managedObjectContext;
+    
+    productController.productProvider = self.productProvider;
     productController.cartProvider = self.cartProvider;
     
     return YES;
