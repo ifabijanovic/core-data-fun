@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681E4B5A1C96581D10EA4E0C /* libPods-CoreDataFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D98505C121E803EF5683E /* libPods-CoreDataFun.a */; };
 		81EC3F171B6A9B4D0076EE5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F161B6A9B4D0076EE5F /* main.m */; };
 		81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */; };
 		81EC3F1D1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F1B1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld */; };
@@ -14,22 +15,12 @@
 		81EC3F231B6A9B4D0076EE5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F211B6A9B4D0076EE5F /* Main.storyboard */; };
 		81EC3F251B6A9B4D0076EE5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F241B6A9B4D0076EE5F /* Images.xcassets */; };
 		81EC3F281B6A9B4D0076EE5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */; };
-		81EC3F341B6A9B4D0076EE5F /* CoreDataFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F331B6A9B4D0076EE5F /* CoreDataFunTests.m */; };
 		81EC3F471B6A9DAF0076EE5F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F461B6A9DAF0076EE5F /* Product.m */; };
 		81EC3F4A1B6A9DAF0076EE5F /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F491B6A9DAF0076EE5F /* Cart.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		81EC3F2E1B6A9B4D0076EE5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81EC3F091B6A9B4D0076EE5F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81EC3F101B6A9B4D0076EE5F;
-			remoteInfo = CoreDataFun;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		806C248435BFA10F4B4DDEBF /* Pods-CoreDataFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataFun.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataFun/Pods-CoreDataFun.release.xcconfig"; sourceTree = "<group>"; };
 		81EC3F111B6A9B4D0076EE5F /* CoreDataFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EC3F151B6A9B4D0076EE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81EC3F161B6A9B4D0076EE5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,13 +32,12 @@
 		81EC3F221B6A9B4D0076EE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81EC3F241B6A9B4D0076EE5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81EC3F271B6A9B4D0076EE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		81EC3F2D1B6A9B4D0076EE5F /* CoreDataFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81EC3F321B6A9B4D0076EE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81EC3F331B6A9B4D0076EE5F /* CoreDataFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunTests.m; sourceTree = "<group>"; };
 		81EC3F451B6A9DAF0076EE5F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = Data/Model/Product.h; sourceTree = "<group>"; };
 		81EC3F461B6A9DAF0076EE5F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = Data/Model/Product.m; sourceTree = "<group>"; };
 		81EC3F481B6A9DAF0076EE5F /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = Data/Model/Cart.h; sourceTree = "<group>"; };
 		81EC3F491B6A9DAF0076EE5F /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cart.m; path = Data/Model/Cart.m; sourceTree = "<group>"; };
+		AEF61AD564393647A77AF15A /* Pods-CoreDataFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataFun/Pods-CoreDataFun.debug.xcconfig"; sourceTree = "<group>"; };
+		C46D98505C121E803EF5683E /* libPods-CoreDataFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,25 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81EC3F2A1B6A9B4D0076EE5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				681E4B5A1C96581D10EA4E0C /* libPods-CoreDataFun.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81825756650DE824E11345BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEF61AD564393647A77AF15A /* Pods-CoreDataFun.debug.xcconfig */,
+				806C248435BFA10F4B4DDEBF /* Pods-CoreDataFun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		81EC3F081B6A9B4C0076EE5F = {
 			isa = PBXGroup;
 			children = (
 				81EC3F131B6A9B4D0076EE5F /* CoreDataFun */,
-				81EC3F301B6A9B4D0076EE5F /* CoreDataFunTests */,
 				81EC3F121B6A9B4D0076EE5F /* Products */,
+				81825756650DE824E11345BB /* Pods */,
+				9FEB17E8108AEC43D92D5E04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				81EC3F111B6A9B4D0076EE5F /* CoreDataFun.app */,
-				81EC3F2D1B6A9B4D0076EE5F /* CoreDataFunTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,23 +104,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		81EC3F301B6A9B4D0076EE5F /* CoreDataFunTests */ = {
-			isa = PBXGroup;
-			children = (
-				81EC3F331B6A9B4D0076EE5F /* CoreDataFunTests.m */,
-				81EC3F311B6A9B4D0076EE5F /* Supporting Files */,
-			);
-			path = CoreDataFunTests;
-			sourceTree = "<group>";
-		};
-		81EC3F311B6A9B4D0076EE5F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				81EC3F321B6A9B4D0076EE5F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		81EC3F3D1B6A9C190076EE5F /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +124,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9FEB17E8108AEC43D92D5E04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C46D98505C121E803EF5683E /* libPods-CoreDataFun.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81EC3F371B6A9B4D0076EE5F /* Build configuration list for PBXNativeTarget "CoreDataFun" */;
 			buildPhases = (
+				63A97DEED36433361B622C4C /* Check Pods Manifest.lock */,
 				81EC3F0D1B6A9B4D0076EE5F /* Sources */,
 				81EC3F0E1B6A9B4D0076EE5F /* Frameworks */,
 				81EC3F0F1B6A9B4D0076EE5F /* Resources */,
+				809A3517339A5CB37304F74E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,24 +153,6 @@
 			productName = CoreDataFun;
 			productReference = 81EC3F111B6A9B4D0076EE5F /* CoreDataFun.app */;
 			productType = "com.apple.product-type.application";
-		};
-		81EC3F2C1B6A9B4D0076EE5F /* CoreDataFunTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81EC3F3A1B6A9B4D0076EE5F /* Build configuration list for PBXNativeTarget "CoreDataFunTests" */;
-			buildPhases = (
-				81EC3F291B6A9B4D0076EE5F /* Sources */,
-				81EC3F2A1B6A9B4D0076EE5F /* Frameworks */,
-				81EC3F2B1B6A9B4D0076EE5F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81EC3F2F1B6A9B4D0076EE5F /* PBXTargetDependency */,
-			);
-			name = CoreDataFunTests;
-			productName = CoreDataFunTests;
-			productReference = 81EC3F2D1B6A9B4D0076EE5F /* CoreDataFunTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -197,10 +165,6 @@
 				TargetAttributes = {
 					81EC3F101B6A9B4D0076EE5F = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					81EC3F2C1B6A9B4D0076EE5F = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 81EC3F101B6A9B4D0076EE5F;
 					};
 				};
 			};
@@ -218,7 +182,6 @@
 			projectRoot = "";
 			targets = (
 				81EC3F101B6A9B4D0076EE5F /* CoreDataFun */,
-				81EC3F2C1B6A9B4D0076EE5F /* CoreDataFunTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,14 +197,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81EC3F2B1B6A9B4D0076EE5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63A97DEED36433361B622C4C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		809A3517339A5CB37304F74E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreDataFun/Pods-CoreDataFun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		81EC3F0D1B6A9B4D0076EE5F /* Sources */ = {
@@ -257,23 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81EC3F291B6A9B4D0076EE5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81EC3F341B6A9B4D0076EE5F /* CoreDataFunTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		81EC3F2F1B6A9B4D0076EE5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81EC3F101B6A9B4D0076EE5F /* CoreDataFun */;
-			targetProxy = 81EC3F2E1B6A9B4D0076EE5F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		81EC3F211B6A9B4D0076EE5F /* Main.storyboard */ = {
@@ -379,6 +352,7 @@
 		};
 		81EC3F381B6A9B4D0076EE5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEF61AD564393647A77AF15A /* Pods-CoreDataFun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreDataFun/Info.plist;
@@ -389,45 +363,12 @@
 		};
 		81EC3F391B6A9B4D0076EE5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806C248435BFA10F4B4DDEBF /* Pods-CoreDataFun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreDataFun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		81EC3F3B1B6A9B4D0076EE5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CoreDataFunTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataFun.app/CoreDataFun";
-			};
-			name = Debug;
-		};
-		81EC3F3C1B6A9B4D0076EE5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CoreDataFunTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataFun.app/CoreDataFun";
 			};
 			name = Release;
 		};
@@ -450,14 +391,7 @@
 				81EC3F391B6A9B4D0076EE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		81EC3F3A1B6A9B4D0076EE5F /* Build configuration list for PBXNativeTarget "CoreDataFunTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81EC3F3B1B6A9B4D0076EE5F /* Debug */,
-				81EC3F3C1B6A9B4D0076EE5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
