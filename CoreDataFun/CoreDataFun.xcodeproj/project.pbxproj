@@ -15,6 +15,8 @@
 		81EC3F251B6A9B4D0076EE5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F241B6A9B4D0076EE5F /* Images.xcassets */; };
 		81EC3F281B6A9B4D0076EE5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */; };
 		81EC3F341B6A9B4D0076EE5F /* CoreDataFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F331B6A9B4D0076EE5F /* CoreDataFunTests.m */; };
+		81EC3F471B6A9DAF0076EE5F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F461B6A9DAF0076EE5F /* Product.m */; };
+		81EC3F4A1B6A9DAF0076EE5F /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F491B6A9DAF0076EE5F /* Cart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		81EC3F2D1B6A9B4D0076EE5F /* CoreDataFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EC3F321B6A9B4D0076EE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81EC3F331B6A9B4D0076EE5F /* CoreDataFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunTests.m; sourceTree = "<group>"; };
+		81EC3F451B6A9DAF0076EE5F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = Data/Model/Product.h; sourceTree = "<group>"; };
+		81EC3F461B6A9DAF0076EE5F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = Data/Model/Product.m; sourceTree = "<group>"; };
+		81EC3F481B6A9DAF0076EE5F /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = Data/Model/Cart.h; sourceTree = "<group>"; };
+		81EC3F491B6A9DAF0076EE5F /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cart.m; path = Data/Model/Cart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 		81EC3F131B6A9B4D0076EE5F /* CoreDataFun */ = {
 			isa = PBXGroup;
 			children = (
+				81EC3F3D1B6A9C190076EE5F /* Data */,
 				81EC3F181B6A9B4D0076EE5F /* AppDelegate.h */,
 				81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */,
 				81EC3F1E1B6A9B4D0076EE5F /* ViewController.h */,
@@ -90,7 +97,6 @@
 				81EC3F211B6A9B4D0076EE5F /* Main.storyboard */,
 				81EC3F241B6A9B4D0076EE5F /* Images.xcassets */,
 				81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */,
-				81EC3F1B1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld */,
 				81EC3F141B6A9B4D0076EE5F /* Supporting Files */,
 			);
 			path = CoreDataFun;
@@ -120,6 +126,26 @@
 				81EC3F321B6A9B4D0076EE5F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81EC3F3D1B6A9C190076EE5F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				81EC3F441B6A9D910076EE5F /* Model */,
+				81EC3F1B1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		81EC3F441B6A9D910076EE5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81EC3F481B6A9DAF0076EE5F /* Cart.h */,
+				81EC3F491B6A9DAF0076EE5F /* Cart.m */,
+				81EC3F451B6A9DAF0076EE5F /* Product.h */,
+				81EC3F461B6A9DAF0076EE5F /* Product.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EC3F1D1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld in Sources */,
+				81EC3F4A1B6A9DAF0076EE5F /* Cart.m in Sources */,
 				81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */,
+				81EC3F471B6A9DAF0076EE5F /* Product.m in Sources */,
 				81EC3F201B6A9B4D0076EE5F /* ViewController.m in Sources */,
 				81EC3F171B6A9B4D0076EE5F /* main.m in Sources */,
 			);
