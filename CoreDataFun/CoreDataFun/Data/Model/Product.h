@@ -2,14 +2,14 @@
 //  Product.h
 //  CoreDataFun
 //
-//  Created by Ivan Fabijanovic on 30/07/15.
+//  Created by Ivan Fabijanovic on 31/07/15.
 //  Copyright (c) 2015 Ivan Fabijanović. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Cart;
+@class CartProduct;
 
 @interface Product : NSManagedObject
 
@@ -20,14 +20,14 @@
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSString * productId;
 @property (nonatomic, retain) NSDecimalNumber * unitWeight;
-@property (nonatomic, retain) NSSet *carts;
+@property (nonatomic, retain) NSSet *cart;
 @end
 
 @interface Product (CoreDataGeneratedAccessors)
 
-- (void)addCartsObject:(Cart *)value;
-- (void)removeCartsObject:(Cart *)value;
-- (void)addCarts:(NSSet *)values;
-- (void)removeCarts:(NSSet *)values;
+- (void)addCartObject:(CartProduct *)value;
+- (void)removeCartObject:(CartProduct *)value;
+- (void)addCart:(NSSet *)values;
+- (void)removeCart:(NSSet *)values;
 
 @end

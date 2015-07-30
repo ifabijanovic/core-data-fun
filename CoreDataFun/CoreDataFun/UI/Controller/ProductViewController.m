@@ -41,7 +41,8 @@
 }
 
 - (IBAction)addToCartTapped:(id)sender {
-
+    [self.cartProvider addProduct:self.product quantity:self.quantity];
+    self.quantity = 1;
 }
 - (IBAction)quantityValueChanged:(UIStepper *)sender {
     self.quantity = (int)sender.value;

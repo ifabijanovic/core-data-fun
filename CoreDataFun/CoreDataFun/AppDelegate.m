@@ -24,10 +24,12 @@
     // Override point for customization after application launch.
     
     _productProvider = [[ProductProvider alloc] initWithManagedObjectContext:self.managedObjectContext];
+    _cartProvider = [[CartProvider alloc] initWithManagedObjectContext:self.managedObjectContext];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ProductTableViewController *productController = (ProductTableViewController *)[navigationController topViewController];
     productController.managedObjectContext = self.managedObjectContext;
+    productController.cartProvider = self.cartProvider;
     
     return YES;
 }

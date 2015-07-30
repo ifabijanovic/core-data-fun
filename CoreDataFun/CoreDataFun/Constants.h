@@ -9,6 +9,7 @@
 #ifndef CoreDataFun_Constants_h
 #define CoreDataFun_Constants_h
 
-#define PRODUCTS_CHANGED_NOTIFICATIONS @"productsChangedNotification"
+#define PRODUCTS_CHANGED_NOTIFICATION @"productsChangedNotification"
+#define CART_CHANGED_NOTIFICATION @"cartChangedNotification"
 
 #endif

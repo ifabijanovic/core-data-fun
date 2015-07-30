@@ -90,7 +90,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"productId = %@", productId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"productId == %@", productId];
     [request setPredicate:predicate];
     
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
@@ -133,7 +133,7 @@
 
 - (void)notifyHasChanges {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_CHANGED_NOTIFICATIONS object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_CHANGED_NOTIFICATION object:nil];
     });
 }
 

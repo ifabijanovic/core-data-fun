@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "ProductProvider.h"
+#import "CartProvider.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -19,6 +20,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (readonly, strong, nonatomic) ProductProvider *productProvider;
+@property (readonly, strong, nonatomic) CartProvider *cartProvider;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

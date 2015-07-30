@@ -2,12 +2,12 @@
 //  Product.m
 //  CoreDataFun
 //
-//  Created by Ivan Fabijanovic on 30/07/15.
+//  Created by Ivan Fabijanovic on 31/07/15.
 //  Copyright (c) 2015 Ivan Fabijanović. All rights reserved.
 //
 
 #import "Product.h"
-#import "Cart.h"
+#import "CartProduct.h"
 
 
 @implementation Product
@@ -19,6 +19,6 @@
 @dynamic price;
 @dynamic productId;
 @dynamic unitWeight;
-@dynamic carts;
+@dynamic cart;
 
 @end

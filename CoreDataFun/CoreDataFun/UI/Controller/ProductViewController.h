@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Product.h"
+#import "CartProvider.h"
 
 @interface ProductViewController : UIViewController
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *quantityLabel;
 
 @property (nonatomic, retain) Product *product;
+@property (nonatomic, retain) CartProvider *cartProvider;
 
 - (IBAction)quantityValueChanged:(UIStepper *)sender;
 - (IBAction)addToCartTapped:(id)sender;

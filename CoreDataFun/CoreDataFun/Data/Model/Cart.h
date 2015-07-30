@@ -2,25 +2,26 @@
 //  Cart.h
 //  CoreDataFun
 //
-//  Created by Ivan Fabijanovic on 30/07/15.
+//  Created by Ivan Fabijanovic on 31/07/15.
 //  Copyright (c) 2015 Ivan Fabijanović. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Product;
+@class CartProduct;
 
 @interface Cart : NSManagedObject
 
-@property (nonatomic, retain) NSSet *items;
+@property (nonatomic, retain) NSNumber * isArchived;
+@property (nonatomic, retain) NSSet *product;
 @end
 
 @interface Cart (CoreDataGeneratedAccessors)
 
-- (void)addItemsObject:(Product *)value;
-- (void)removeItemsObject:(Product *)value;
-- (void)addItems:(NSSet *)values;
-- (void)removeItems:(NSSet *)values;
+- (void)addProductObject:(CartProduct *)value;
+- (void)removeProductObject:(CartProduct *)value;
+- (void)addProduct:(NSSet *)values;
+- (void)removeProduct:(NSSet *)values;
 
 @end

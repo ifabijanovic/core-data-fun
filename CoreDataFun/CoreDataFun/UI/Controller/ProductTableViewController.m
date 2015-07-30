@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsChanged:) name:PRODUCTS_CHANGED_NOTIFICATIONS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsChanged:) name:PRODUCTS_CHANGED_NOTIFICATION object:nil];
     
     [self performFetch];
 }
@@ -74,6 +74,7 @@
     if ([segue.identifier isEqualToString:@"detail"]) {
         ProductViewController *controller = (ProductViewController *)segue.destinationViewController;
         controller.product = sender;
+        controller.cartProvider = self.cartProvider;
     }
 }
 
