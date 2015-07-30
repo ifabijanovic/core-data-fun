@@ -14,13 +14,12 @@
 @interface Product : NSManagedObject
 
 @property (nonatomic, retain) NSString * currency;
-@property (nonatomic, retain) NSString * desc;
-@property (nonatomic, retain) NSString * productId;
+@property (nonatomic, retain) NSNumber * lastModified;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * pictureUrl;
 @property (nonatomic, retain) NSDecimalNumber * price;
+@property (nonatomic, retain) NSString * productId;
 @property (nonatomic, retain) NSDecimalNumber * unitWeight;
-@property (nonatomic, retain) NSNumber * lastModified;
 @property (nonatomic, retain) NSSet *carts;
 @end
 

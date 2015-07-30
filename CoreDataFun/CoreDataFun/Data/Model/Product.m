@@ -13,13 +13,12 @@
 @implementation Product
 
 @dynamic currency;
-@dynamic desc;
-@dynamic productId;
+@dynamic lastModified;
 @dynamic name;
 @dynamic pictureUrl;
 @dynamic price;
+@dynamic productId;
 @dynamic unitWeight;
-@dynamic lastModified;
 @dynamic carts;
 
 @end

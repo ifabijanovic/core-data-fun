@@ -117,7 +117,6 @@
 
 - (void)fillProduct:(Product *)product withData:(NSDictionary *)data {
     product.name = [data objectForKey:@"name"];
-    product.desc = [data objectForKey:@"description"];
     product.currency = [data objectForKey:@"currency"];
     product.pictureUrl = [data objectForKey:@"pictureUrl"];
     
