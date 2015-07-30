@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Products-->
         <scene sceneID="DWz-w8-yD4">
             <objects>
                 <tableViewController id="b2U-Lo-sTu" customClass="ProductTableViewController" sceneMemberID="viewController">
@@ -12,13 +12,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="LEx-du-lHJ">
+                            <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CRp-j9-RNI">
+                                    <rect key="frame" x="290" y="20" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="CRp-j9-RNI" secondAttribute="centerX" id="U7Q-Vz-BKQ"/>
+                                <constraint firstAttribute="centerY" secondItem="CRp-j9-RNI" secondAttribute="centerY" id="ajT-tZ-gEs"/>
+                            </constraints>
+                        </view>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="b2U-Lo-sTu" id="wHb-Wm-OVY"/>
                             <outlet property="delegate" destination="b2U-Lo-sTu" id="5du-JC-dZX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="fs2-Wp-uEW"/>
+                    <navigationItem key="navigationItem" title="Products" id="c0Z-Xr-oxo"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="CRp-j9-RNI" id="KgL-Qk-TQ9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGN-ib-TS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

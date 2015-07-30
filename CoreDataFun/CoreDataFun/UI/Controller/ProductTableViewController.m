@@ -9,6 +9,8 @@
 #import "ProductTableViewController.h"
 #import "ProductTableViewCell.h"
 #import "Product.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Constants.h"
 
 @interface ProductTableViewController ()
 
@@ -22,6 +24,7 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsChanged:) name:PRODUCTS_CHANGED_NOTIFICATIONS object:nil];
     
     [self performFetch];
 }
@@ -51,6 +54,7 @@
     Product *product = [self.products objectAtIndex:indexPath.row];
     cell.nameLabel.text = product.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ %@", product.price, product.currency];
+    [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:product.pictureUrl]];
     
     return cell;
 }
@@ -102,6 +106,8 @@
 #pragma mark - Fetch
 
 - (void)performFetch {
+    [self.activityIndicatorView startAnimating];
+    
     __weak ProductTableViewController *weakSelf = self;
     
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Product" inManagedObjectContext:self.managedObjectContext];
@@ -126,7 +132,15 @@
     if (result.finalResult) {
         self.products = result.finalResult;
         [self.tableView reloadData];
+        
+        if (result.finalResult.count > 0) {
+            [self.activityIndicatorView stopAnimating];
+        }
     }
+}
+
+- (void)productsChanged:(NSNotification *)notification {
+    [self performFetch];
 }
 
 @end

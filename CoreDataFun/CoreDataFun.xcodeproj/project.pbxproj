@@ -46,6 +46,7 @@
 		81EC3F671B6AB7340076EE5F /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewCell.h; path = UI/View/ProductTableViewCell.h; sourceTree = "<group>"; };
 		81EC3F681B6AB7340076EE5F /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewCell.m; path = UI/View/ProductTableViewCell.m; sourceTree = "<group>"; };
 		81EC3F691B6AB7340076EE5F /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductTableViewCell.xib; path = UI/View/ProductTableViewCell.xib; sourceTree = "<group>"; };
+		81EC3F6D1B6AC2790076EE5F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		AEF61AD564393647A77AF15A /* Pods-CoreDataFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataFun/Pods-CoreDataFun.debug.xcconfig"; sourceTree = "<group>"; };
 		C46D98505C121E803EF5683E /* libPods-CoreDataFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +102,7 @@
 				81EC3F261B6A9B4D0076EE5F /* LaunchScreen.xib */,
 				81EC3F141B6A9B4D0076EE5F /* Supporting Files */,
 				81EC3F551B6AA5430076EE5F /* config.plist */,
+				81EC3F6D1B6AC2790076EE5F /* Constants.h */,
 			);
 			path = CoreDataFun;
 			sourceTree = "<group>";

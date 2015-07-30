@@ -11,6 +11,8 @@
 
 @interface ProductTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

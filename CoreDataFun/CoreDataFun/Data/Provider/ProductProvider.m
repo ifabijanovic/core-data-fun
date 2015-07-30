@@ -9,6 +9,7 @@
 #import "ProductProvider.h"
 #import <AFNetworking/AFNetworking.h>
 #import "Product.h"
+#import "Constants.h"
 
 #define ENTITY_NAME @"Product"
 #define URL_KEY @"Product Source URL"
@@ -65,6 +66,7 @@
                 if (self.hasChanges) {
                     [self.managedObjectContext save:nil];
                     self.hasChanges = NO;
+                    [self notifyHasChanges];
                 }
             } failure:nil];
         }
@@ -128,6 +130,12 @@
     product.lastModified = [data objectForKey:@"modifiedTmstp"];
     
     self.hasChanges = YES;
+}
+
+- (void)notifyHasChanges {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_CHANGED_NOTIFICATIONS object:nil];
+    });
 }
 
 @end
