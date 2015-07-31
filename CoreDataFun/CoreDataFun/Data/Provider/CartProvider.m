@@ -70,6 +70,14 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:CART_CHANGED_NOTIFICATION object:self];
 }
 
+- (void)checkout {
+    self.cart.isArchived = [NSNumber numberWithBool:YES];
+    [self.managedObjectContext save:nil];
+    
+    self.cart = [self createNewCart];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CART_CREATED_NOTIFICATION object:self];
+}
+
 #pragma mark - Private methods
 
 - (Cart *)getActiveCart {

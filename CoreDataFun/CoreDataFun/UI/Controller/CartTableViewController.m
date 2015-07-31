@@ -25,6 +25,7 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CartProductTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cartCreated:) name:CART_CREATED_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cartChanged:) name:CART_CHANGED_NOTIFICATION object:nil];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -87,7 +88,13 @@
 }
 
 - (IBAction)checkoutTapped:(id)sender {
-    
+    [self.cartProvider checkout];
+}
+
+- (void)cartCreated:(NSNotification *)notification {
+    self.products = [self.cartProvider getProductsInCart];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    [self setTotal];
 }
 
 - (void)cartChanged:(NSNotification *)notification {

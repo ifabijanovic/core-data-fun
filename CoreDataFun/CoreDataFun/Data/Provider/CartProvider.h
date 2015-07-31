@@ -18,5 +18,6 @@
 - (void)addProduct:(Product *)product quantity:(int)quantity;
 - (NSArray *)getProductsInCart;
 - (void)removeProduct:(CartProduct *)cartProduct;
+- (void)checkout;
 
 @end
