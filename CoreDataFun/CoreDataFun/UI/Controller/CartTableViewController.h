@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *totalLabel;
 - (IBAction)checkoutTapped:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *checkoutButton;
 
 @end
