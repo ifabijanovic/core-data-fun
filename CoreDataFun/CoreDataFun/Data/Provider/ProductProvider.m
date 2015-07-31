@@ -153,7 +153,7 @@
 
 - (void)notifyHasChanges {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_CHANGED_NOTIFICATION object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_CHANGED_NOTIFICATION object:self];
     });
 }
 

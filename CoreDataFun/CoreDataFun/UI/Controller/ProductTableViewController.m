@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Constants.h"
 #import "ProductViewController.h"
+#import "CartTableViewController.h"
 
 @interface ProductTableViewController ()
 
@@ -33,6 +34,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table view data source
@@ -74,6 +79,9 @@
     if ([segue.identifier isEqualToString:@"detail"]) {
         ProductViewController *controller = (ProductViewController *)segue.destinationViewController;
         controller.product = sender;
+        controller.cartProvider = self.cartProvider;
+    } else if ([segue.identifier isEqualToString:@"cart"]) {
+        CartTableViewController *controller = (CartTableViewController *)segue.destinationViewController;
         controller.cartProvider = self.cartProvider;
     }
 }

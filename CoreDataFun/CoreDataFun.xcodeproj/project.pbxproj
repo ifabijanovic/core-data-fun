@@ -12,6 +12,9 @@
 		818F130D1B6AD6CF00F627FC /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F130C1B6AD6CF00F627FC /* Product.m */; };
 		818F13131B6AD71900F627FC /* CartProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F13121B6AD71900F627FC /* CartProvider.m */; };
 		818F13161B6AD7E500F627FC /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F13151B6AD7E500F627FC /* Cart.m */; };
+		818F13191B6AE66E00F627FC /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F13181B6AE66E00F627FC /* CartTableViewController.m */; };
+		818F131D1B6AE78600F627FC /* CartProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F131B1B6AE78600F627FC /* CartProductTableViewCell.m */; };
+		818F131E1B6AE78600F627FC /* CartProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818F131C1B6AE78600F627FC /* CartProductTableViewCell.xib */; };
 		81EC3F171B6A9B4D0076EE5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F161B6A9B4D0076EE5F /* main.m */; };
 		81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F191B6A9B4D0076EE5F /* AppDelegate.m */; };
 		81EC3F1D1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81EC3F1B1B6A9B4D0076EE5F /* CoreDataFun.xcdatamodeld */; };
@@ -36,6 +39,11 @@
 		818F13121B6AD71900F627FC /* CartProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartProvider.m; path = Data/Provider/CartProvider.m; sourceTree = "<group>"; };
 		818F13141B6AD7E500F627FC /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = Data/Model/Cart.h; sourceTree = "<group>"; };
 		818F13151B6AD7E500F627FC /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cart.m; path = Data/Model/Cart.m; sourceTree = "<group>"; };
+		818F13171B6AE66E00F627FC /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewController.h; path = UI/Controller/CartTableViewController.h; sourceTree = "<group>"; };
+		818F13181B6AE66E00F627FC /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewController.m; path = UI/Controller/CartTableViewController.m; sourceTree = "<group>"; };
+		818F131A1B6AE78600F627FC /* CartProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartProductTableViewCell.h; path = UI/View/CartProductTableViewCell.h; sourceTree = "<group>"; };
+		818F131B1B6AE78600F627FC /* CartProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartProductTableViewCell.m; path = UI/View/CartProductTableViewCell.m; sourceTree = "<group>"; };
+		818F131C1B6AE78600F627FC /* CartProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartProductTableViewCell.xib; path = UI/View/CartProductTableViewCell.xib; sourceTree = "<group>"; };
 		81EC3F111B6A9B4D0076EE5F /* CoreDataFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EC3F151B6A9B4D0076EE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81EC3F161B6A9B4D0076EE5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,6 +183,8 @@
 				81EC3F641B6AB5F30076EE5F /* ProductTableViewController.m */,
 				81EC3F6E1B6AC5330076EE5F /* ProductViewController.h */,
 				81EC3F6F1B6AC5330076EE5F /* ProductViewController.m */,
+				818F13171B6AE66E00F627FC /* CartTableViewController.h */,
+				818F13181B6AE66E00F627FC /* CartTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +195,9 @@
 				81EC3F671B6AB7340076EE5F /* ProductTableViewCell.h */,
 				81EC3F681B6AB7340076EE5F /* ProductTableViewCell.m */,
 				81EC3F691B6AB7340076EE5F /* ProductTableViewCell.xib */,
+				818F131A1B6AE78600F627FC /* CartProductTableViewCell.h */,
+				818F131B1B6AE78600F627FC /* CartProductTableViewCell.m */,
+				818F131C1B6AE78600F627FC /* CartProductTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -261,6 +274,7 @@
 				81EC3F6B1B6AB7340076EE5F /* ProductTableViewCell.xib in Resources */,
 				81EC3F281B6A9B4D0076EE5F /* LaunchScreen.xib in Resources */,
 				81EC3F251B6A9B4D0076EE5F /* Images.xcassets in Resources */,
+				818F131E1B6AE78600F627FC /* CartProductTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +322,9 @@
 				818F130D1B6AD6CF00F627FC /* Product.m in Sources */,
 				818F130A1B6AD6CF00F627FC /* CartProduct.m in Sources */,
 				81EC3F651B6AB5F30076EE5F /* ProductTableViewController.m in Sources */,
+				818F131D1B6AE78600F627FC /* CartProductTableViewCell.m in Sources */,
 				81EC3F1A1B6A9B4D0076EE5F /* AppDelegate.m in Sources */,
+				818F13191B6AE66E00F627FC /* CartTableViewController.m in Sources */,
 				818F13131B6AD71900F627FC /* CartProvider.m in Sources */,
 				818F13161B6AD7E500F627FC /* Cart.m in Sources */,
 				81EC3F6A1B6AB7340076EE5F /* ProductTableViewCell.m in Sources */,

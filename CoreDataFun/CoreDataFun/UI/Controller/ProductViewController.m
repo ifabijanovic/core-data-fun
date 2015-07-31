@@ -8,6 +8,7 @@
 
 #import "ProductViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "CartTableViewController.h"
 
 @interface ProductViewController ()
 
@@ -44,8 +45,16 @@
     [self.cartProvider addProduct:self.product quantity:self.quantity];
     self.quantity = 1;
 }
+
 - (IBAction)quantityValueChanged:(UIStepper *)sender {
     self.quantity = (int)sender.value;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"cart"]) {
+        CartTableViewController *controller = (CartTableViewController *)segue.destinationViewController;
+        controller.cartProvider = self.cartProvider;
+    }
 }
 
 @end

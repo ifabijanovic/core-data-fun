@@ -16,5 +16,7 @@
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 - (void)addProduct:(Product *)product quantity:(int)quantity;
+- (NSArray *)getProductsInCart;
+- (void)removeProduct:(CartProduct *)cartProduct;
 
 @end

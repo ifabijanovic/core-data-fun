@@ -54,7 +54,20 @@
         cartProduct.unitPrice = product.price;
     }
     
+    if (self.managedObjectContext.hasChanges) {
+        [self.managedObjectContext save:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CART_CHANGED_NOTIFICATION object:self];
+    }
+}
+
+- (NSArray *)getProductsInCart {
+    return self.cart ? [self.cart.product allObjects] : [NSArray array];
+}
+
+- (void)removeProduct:(CartProduct *)cartProduct {
+    [self.managedObjectContext deleteObject:cartProduct];
     [self.managedObjectContext save:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CART_CHANGED_NOTIFICATION object:self];
 }
 
 #pragma mark - Private methods
